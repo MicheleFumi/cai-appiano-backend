@@ -1,0 +1,112 @@
+@import '~bootstrap/scss/bootstrap';
+@import '../../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+
+
+
+/* Navbar Mobile a schermo intero (max-width: 991px ≈ breakpoint md-lg) */
+@media (max-width: 991px) {
+    /* Quando collassa, la navbar diventa assoluta e copre tutta la larghezza */
+    .navbar-collapse {
+      position: absolute;
+      top: 80px; /* Altezza del navbar toggler */
+      left: 0;
+      width: 100%;
+      background-color: rgb(33, 33, 33); /* Sfondo scuro */
+      padding: 1rem;
+      z-index: 1000;
+    }
+  
+    /* Link bianchi in modalità mobile */
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      padding: 0.5rem 0;
+      display: block;
+      text-align: center;
+    }
+  
+    /* Effetto hover link */
+    .navbar-nav .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+  
+  .header-dark {
+    background-color: rgb(0, 0, 0); /* Cambia il valore per regolare l'intensità del colore */
+    transition: background-color 0.3s ease; /* Transizione fluida */
+    color: white;
+}
+
+.header-dark .navbar-nav .nav-link{
+    color: white !important; /* Forza il colore del testo a bianco */
+}
+
+/* Testo di default (per quando l'header è trasparente) */
+.navbar-dark .navbar-nav .nav-link {
+    color: black; /* Testo nero di default */
+}
+.header-dark .title{
+    color: white !important; /* Forza il colore del testo a bianco */
+}
+
+
+
+
+    /* Nav link base */
+    .navbar-nav .nav-link {
+        position: relative;
+    }
+
+    /* Barra sottostante invisibile di base */
+    .navbar-nav .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -5px; /* Posiziona la barra sotto il testo */
+        left: 50%; /* Inizia dal centro */
+        width: 0; /* Larghezza iniziale 0 */
+        height: 3px;
+        background-color: #007bff; /* Colore della barra */
+        transition: width 0.3s ease, left 0.3s ease; /* Animazione per espandere la barra e farla muovere */
+        transform: translateX(-50%); /* Allinea la barra esattamente al centro del link */
+    }
+
+    /* Effetto hover: espandere la barra da centro verso i lati */
+    .navbar-nav .nav-link:hover::after {
+        width: 100%; /* La barra si allarga su tutta la larghezza del link */
+       
+    }
+
+    /* Cambia lo sfondo e il colore del testo al cambio della classe header-dark */
+    .header-dark {
+        background-color: #000000 !important; /* Sfondo nero */
+        color: #ffffff !important; /* Testo bianco */
+        box-shadow: 9px 12px 15px rgba(0, 0, 0, 0.3);
+
+
+    }
+
+    .header-dark .navbar-nav .nav-link {
+        color: #ffffff; /* Colore del testo bianco quando è attivo header-dark */
+    }
+
+/* Nasconde i controlli di default */
+.carousel-control-prev,
+.carousel-control-next {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Mostra i controlli quando il mouse è sopra il carosello */
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next {
+    opacity: 1;
+}
+
+
+
+
+
+
+footer{
+  font-size: 0.8rem;
+  background-color: hsl(0, 4%, 95%);
+}
