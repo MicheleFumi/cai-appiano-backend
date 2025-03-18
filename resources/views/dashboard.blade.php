@@ -8,7 +8,8 @@
         <div class="row justify-content-center">
             <div class="col">
                 <div class="card">
-                    <div class="card-header">{{ __('User Dashboard') }}</div>
+                    <div class="card-header">{{ __('Bentornato ') . ucfirst(Auth::user()->name) }}</div>
+
 
                     <div class="card-body">
                         @if (session('status'))
@@ -17,9 +18,9 @@
                             </div>
                         @endif
 
-                        {{ __('You are logged in!') }}
+                        {{ __('Login Effettutato, controlla i link soprastanti per effettuare modifiche') }}
 
-                        <a href={{ route('members.index') }} class='btn btn-primary'> vai ai post</a>
+                  
                     </div>
                 </div>
             </div>

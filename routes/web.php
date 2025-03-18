@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MembersController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PublicMembersController;
 use Illuminate\Support\Facades\Route;
 use PHPUnit\Framework\Attributes\Group;
 
@@ -17,7 +18,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+/* ROUTE SOLO PER AUTHORIZED */
 Route::middleware('auth')->group(function () {
     route::resource('members', MembersController::class);
 });
+
+/* ROUTE PER REACT */
+Route::get('/public/members', [PublicMembersController::class, 'index']);
 require __DIR__ . '/auth.php';

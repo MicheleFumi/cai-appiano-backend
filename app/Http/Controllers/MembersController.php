@@ -12,7 +12,7 @@ class MembersController extends Controller
      */
     public function index()
     {
-        $members = BoardMember::all();
+        $members = BoardMember::with('role')->get();
         return view('Auth.members.memberList', compact('members'));
     }
 
