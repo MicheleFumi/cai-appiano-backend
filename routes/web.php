@@ -1,34 +1,11 @@
 <?php
 
+use App\Http\Controllers\MembersController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use PHPUnit\Framework\Attributes\Group;
 
 
-
-
-Route::get('/', function () {
-    return view('homepage');
-})->name('homepage');
-
-Route::get('escursioni', function () {
-    return view('escursioni');
-})->name('escursioni');
-
-Route::get('direttivo', function () {
-    return view('direttivo');
-})->name('direttivo');
-
-Route::get('storia', function () {
-    return view('storia');
-})->name('storia');
-
-Route::get('collaboratori', function () {
-    return view('collaboratori');
-})->name('collaboratori');
-
-Route::get('documenti', function () {
-    return view('documenti');
-})->name('documenti');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -40,4 +17,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::middleware('auth')->group(function () {
+    route::resource('members', MembersController::class);
+});
 require __DIR__ . '/auth.php';
