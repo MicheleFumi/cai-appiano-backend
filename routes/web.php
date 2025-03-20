@@ -26,4 +26,5 @@ Route::middleware('auth')->group(function () {
 
 /* ROUTE PER REACT */
 Route::get('/public/members', [PublicMembersController::class, 'index']);
+Route::get('/public/member/{memberId}', [PublicMembersController::class, 'show']);
 require __DIR__ . '/auth.php';

@@ -12,4 +12,11 @@ class PublicMembersController extends Controller
         $members = BoardMember::with('role')->get();
         return response()->json($members);
     }
+
+    public function show(BoardMember $memberId)
+    {
+        $memberId->load('role');
+     return response()->json($memberId);
+    }
+
 }

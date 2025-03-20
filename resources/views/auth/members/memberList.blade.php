@@ -9,11 +9,11 @@
         @foreach ($members as $member)
             <div class="col-md-3 g-3">
                 <div class="card" style="width: 18rem;">
-                    <img src="{{ asset($member->profile_img) }}" alt="">
+                    <img src="{{ asset('storage/'.$member->profile_img) }}" alt="">
                     <div class="card-body">
                         <h5 class="card-title">{{ $member->role->role }}</h5>
                         <p class="card-text">{{ $member->first_name }} {{ $member->last_name }}</p>
-                        <a href="#" class="btn btn-warning">modifica</a>
+                        <a href="{{  route('members.edit', $member)  }}" class="btn btn-warning">modifica</a>
                         <a href="#" class="btn btn-danger">elimina</a>
                     </div>
                 </div>

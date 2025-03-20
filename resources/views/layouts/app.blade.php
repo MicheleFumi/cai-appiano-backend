@@ -47,7 +47,10 @@
                             <a class="nav-link" href="{{ route('dashboard') }}">{{ __('Home') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('members.index') }}">{{ __('lista direttivo') }}</a>
+                            <a class="nav-link" href="{{ route('members.index') }}">{{ __('Lista Direttivo') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('members.create') }}">{{ __('Aggiungi Membro') }}</a>
                         </li>
                     </ul>
 
