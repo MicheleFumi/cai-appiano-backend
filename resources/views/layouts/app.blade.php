@@ -52,6 +52,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('members.create') }}">{{ __('Aggiungi Membro') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('roles.index') }}">{{ __('Lista Ruoli') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

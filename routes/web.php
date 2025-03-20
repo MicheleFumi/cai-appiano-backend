@@ -3,6 +3,7 @@
 use App\Http\Controllers\MembersController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PublicMembersController;
+use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 use PHPUnit\Framework\Attributes\Group;
 
@@ -22,6 +23,7 @@ Route::middleware('auth')->group(function () {
 /* ROUTE SOLO PER AUTHORIZED */
 Route::middleware('auth')->group(function () {
     route::resource('members', MembersController::class);
+    route::resource('roles', RoleController::class);
 });
 
 /* ROUTE PER REACT */

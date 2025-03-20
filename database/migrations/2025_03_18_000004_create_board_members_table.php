@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
-            $table->foreignId('role_id')->constrained();
+            $table->foreignId('role_id')->constrained()->default(4);
             $table->string('profile_img');
             $table->timestamps();
         });

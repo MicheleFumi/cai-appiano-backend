@@ -7,11 +7,8 @@
     <div class="row row-cols-sm-1 row-cols-md-3 row-cols-md-4">
         @foreach ($members as $member)
             <div class="col g-3">
-                <div class="card shadow " style="width: 18rem; border: 0px solid transparent !important">
-                    @if($member->profile_img)
+                <div class="card shadow " style="width: 18rem; border: 0px solid transparent !important"> 
                         <img src="{{ asset('storage/'.$member->profile_img) }}" alt="" class="img-fluid rounded">
-                       
-                   @endif
                     <div class="card-body">
                         <h5 class="card-title">{{ $member->role->role }}</h5>
                         <p class="card-text">{{ $member->first_name }} {{ $member->last_name }}</p>
