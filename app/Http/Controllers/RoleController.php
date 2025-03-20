@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Role;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 
 class RoleController extends Controller
 {
@@ -68,8 +68,13 @@ class RoleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Role $role)
     {
-        //
+        DB::table('board_members')
+        ->where('role_id', $role->id)
+        ->update(['role_id' => 4]); 
+        $role->delete();
+
+        return redirect()->route('roles.index');
     }
 }
