@@ -73,8 +73,19 @@ class MembersController extends Controller
      */
     public function update(Request $request, BoardMember $member)
     {
-        //
-    }
+        $data=$request->all();
+       $member->first_name=$data['first_name'];
+       $member->last_name=$data['last_name'];
+       $member->role_id=$data['role_id'];
+       if(array_key_exists('profile_img',$data)){
+        Storage::delete($member->profile_img);
+        $img_url= Storage::putFile('profile_img',$data['profile_img']);
+        $member->profile_img=$img_url;
+       } 
+     
+        $member->update();
+        return redirect()->route('members.index');
+        }
 
     /**
      * Remove the specified resource from storage.
