@@ -54,9 +54,10 @@ class MembersController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(BoardMember $member)
     {
-        //
+        $member->load('role');
+        return view('Auth.members.showMember',compact('member') );
     }
 
     /**
@@ -90,8 +91,15 @@ class MembersController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(BoardMember $member)
     {
-        //
+        if($member->profile_img){
+            Storage::delete($member->profile_img);
+           } 
+    
+        $member->delete();
+
+
+        return redirect()->route('members.index');
     }
 }
