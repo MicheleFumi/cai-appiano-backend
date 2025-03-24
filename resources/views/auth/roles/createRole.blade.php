@@ -3,7 +3,8 @@
 @section('content')
 <div class="container my-5">
     <h2 class="text-center mb-4">AGGIUNGI RUOLO</h2>
-    
+
+   
     <form action={{route('roles.store')}} method="POST">
         @csrf
         <div class="mb-3">

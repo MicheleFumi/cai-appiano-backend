@@ -33,7 +33,13 @@ class MembersController extends Controller
      */
     public function store(Request $request)
     {
-      
+        $request->validate([
+            'first_name' => ['required', 'string', 'regex:/^[a-zA-Z\s]+$/'],
+            'last_name' => ['required', 'string', 'regex:/^[a-zA-Z\s]+$/'],
+            'role_id' => ['required', 'exists:roles,id'], 
+            'profile_img' => ['required', 'image', 'mimes:jpg,jpeg,png', 'max:2048'], 
+        ]);
+        
      $data=$request->all();
     
      $newMember= new BoardMember();
@@ -49,6 +55,8 @@ class MembersController extends Controller
   
      $newMember->save();
         return redirect()->route('members.index');
+
+       
     }
 
     /**

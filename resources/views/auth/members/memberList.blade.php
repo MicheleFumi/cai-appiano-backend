@@ -2,8 +2,11 @@
 
 @section('content')
 <div class="container py-4">
-    <h2 class="text-center">LISTA DIRETTIVO</h2>
-
+    <h2 class="text-center mb-4">LISTA DIRETTIVO</h2>
+    <div class="text-center mb-4">
+        <a href="{{route('members.create')}}" class="btn btn-secondary">AGGIUNGI MEMBRO</a>
+       
+    </div>
     <div class="row row-cols-sm-1 row-cols-md-3 row-cols-md-4">
         @foreach ($members as $member)
             <div class="col g-3">

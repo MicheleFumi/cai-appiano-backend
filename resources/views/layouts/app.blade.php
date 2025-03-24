@@ -55,7 +55,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('roles.index') }}">{{ __('Lista Ruoli') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('roles.create')}}">{{ __('Aggiungi Ruolo') }}</a>
+                        </li>
                     </ul>
+                   
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
