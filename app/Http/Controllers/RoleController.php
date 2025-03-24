@@ -29,7 +29,9 @@ class RoleController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
+    { $request->validate([
+        'role' => ['required', 'string', 'regex:/^[a-zA-Z\s]+$/'],
+    ]);
         $data=$request->all();
         $newRole= new Role();
         $newRole->role=$data['role'];
@@ -59,6 +61,9 @@ class RoleController extends Controller
      */
     public function update(Request $request, Role $role)
     {
+        $request->validate([
+            'role' => ['required', 'string', 'regex:/^[a-zA-Z\s]+$/'],
+        ]);
     $data=$request->all();
     $role->role=$data['role'];
     $role->update();
