@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\PublicMembersController as ApiPublicMembersController;
 use App\Http\Controllers\MembersController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PublicMembersController;
@@ -27,6 +28,6 @@ Route::middleware('auth')->group(function () {
 });
 
 /* ROUTE PER REACT */
-Route::get('/public/members', [PublicMembersController::class, 'index']);
-Route::get('/public/member/{memberId}', [PublicMembersController::class, 'show']);
+Route::get('/public/members', [ApiPublicMembersController::class, 'index']);
+Route::get('/public/member/{memberId}', [ApiPublicMembersController::class, 'show']);
 require __DIR__ . '/auth.php';

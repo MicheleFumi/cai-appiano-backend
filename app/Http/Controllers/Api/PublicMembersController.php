@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Models\BoardMember;
 use Illuminate\Http\Request;
 
@@ -18,5 +19,4 @@ class PublicMembersController extends Controller
         $memberId->load('role');
      return response()->json($memberId);
     }
-
 }
