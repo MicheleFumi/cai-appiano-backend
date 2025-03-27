@@ -9,7 +9,9 @@
     </div>
     <ul class="list-group list-group-flush w-50 mx-auto">
         @foreach ($roles as $role)
-            <li class="list-group-item d-flex justify-content-between align-items-center fw-semibold">
+       
+            <li class="list-group-item d-flex justify-content-between align-items-center fw-semibold 
+                {{$role->id == '9' ? 'd-none':''}}">
                 <h5 class="mb-0">{{ $role->role }}</h5>
                 <a href="{{ route('roles.edit', $role) }}" class="btn btn-secondary">Modifica/Cancella</a>
             </li>

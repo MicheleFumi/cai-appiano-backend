@@ -3,7 +3,6 @@
 use App\Http\Controllers\Api\PublicMembersController as ApiPublicMembersController;
 use App\Http\Controllers\MembersController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\PublicMembersController;
 use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 use PHPUnit\Framework\Attributes\Group;

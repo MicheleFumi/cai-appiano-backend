@@ -20,3 +20,5 @@ class PublicMembersController extends Controller
      return response()->json($memberId);
     }
 }
+
+ 

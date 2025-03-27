@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BoardMember;
 use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -75,9 +76,9 @@ class RoleController extends Controller
      */
     public function destroy(Role $role)
     {
-        DB::table('board_members')
-        ->where('role_id', $role->id)
-        ->update(['role_id' => 4]); 
+
+        BoardMember::where('role_id', $role->id)
+        ->update(['role_id' => 9]); 
         $role->delete();
 
         return redirect()->route('roles.index');
