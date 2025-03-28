@@ -33,13 +33,13 @@ class MembersController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+  /*       $request->validate([
             'first_name' => ['required', 'string', 'regex:/^[a-zA-Z\s]+$/'],
             'last_name' => ['required', 'string', 'regex:/^[a-zA-Z\s]+$/'],
             'role_id' => ['required', 'exists:roles,id'], 
             'profile_img' => ['required', 'image', 'mimes:jpg,jpeg,png', 'max:2048'], 
         ]);
-        
+         */
      $data=$request->all();
     
      $newMember= new BoardMember();
@@ -82,12 +82,12 @@ class MembersController extends Controller
      */
     public function update(Request $request, BoardMember $member)
     {
-        $request->validate([
+       /*  $request->validate([
             'first_name' => ['required', 'string', 'regex:/^[a-zA-Z\s]+$/'],
             'last_name' => ['required', 'string', 'regex:/^[a-zA-Z\s]+$/'],
             'role_id' => ['required', 'exists:roles,id'], 
             'profile_img' => ['required', 'image', 'mimes:jpg,jpeg,png', 'max:2048'], 
-        ]);
+        ]); */
         $data=$request->all();
        $member->first_name=$data['first_name'];
        $member->last_name=$data['last_name'];
