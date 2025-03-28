@@ -20,6 +20,7 @@ Route::middleware('auth')->group(function () {
 });
 
 
+
 /* ROUTE SOLO PER AUTHORIZED */
 Route::middleware('auth')->group(function () {
     route::resource('members', MembersController::class);
@@ -29,4 +30,13 @@ Route::middleware('auth')->group(function () {
 /* ROUTE PER REACT */
 Route::get('/public/members', [ApiPublicMembersController::class, 'index']);
 Route::get('/public/member/{memberId}', [ApiPublicMembersController::class, 'show']);
+
+
+
+/* Route::get('/ex', function(){
+    return view('ex');
+}); */
+
 require __DIR__ . '/auth.php';
+
+
