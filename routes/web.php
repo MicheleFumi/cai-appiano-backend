@@ -19,9 +19,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/esercizio', function(){
-    return view('esercizio');
-});
+
 
 /* ROUTE SOLO PER AUTHORIZED */
 Route::middleware('auth')->group(function () {
@@ -35,9 +33,7 @@ Route::get('/public/member/{memberId}', [ApiPublicMembersController::class, 'sho
 
 
 
-/* Route::get('/ex', function(){
-    return view('ex');
-}); */
+
 
 require __DIR__ . '/auth.php';
 
